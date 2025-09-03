@@ -19,7 +19,7 @@
                 <a class="navbar-brand" href="index.php">Crud PHP</a>
                 <form action="login.php" method="GET" class="d-inline">
                     <button type="submit" class="btn btn-secondary">
-                        <i class="fas fa-sing-out-alt"></i>Logout
+                        <i class="fas fa-sign-out-alt"></i>Logout
                     </button>
                 </form>
             </div>
