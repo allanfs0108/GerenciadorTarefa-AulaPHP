@@ -8,7 +8,7 @@ try {
         $password = isset($_POST['password']) ? $_POST['password'] : null;
         $confirmPassword = isset($_POST['confirmPassword']) ? $_POST['confirmPassword'] : null;
 
-        if ($email && $password && $confirmPassword){
+        if ($email && $password && $confirmPassword) {
             if ($password !== $confirmPassword) {
                 throw new Exception("As senhas não coincidem!");
             }
@@ -35,15 +35,15 @@ try {
                 throw new Exception("Erro ao preparar a consulta: " . $conn->error);
             }
         } else {
-                throw new Exception("Email, senha e confirmação de senha são obrigatórios!");
-            }
-        } else {
-            throw new Exception("Método de requisição inválido!");
+            throw new Exception("Email, senha e confirmação de senha são obrigatórios!");
         }
-    } catch (Exception $e) {
-        echo "Erro: " . $e->getMessage();
-    } finally {
-        if (isset($conn) && !$conn->connect_error){
-            $conn->close();
-        }
+    } else {
+        throw new Exception("Método de requisição inválido!");
     }
+} catch (Exception $e) {
+    echo "Erro: " . $e->getMessage();
+} finally {
+    if (isset($conn) && !$conn->connect_error) {
+        $conn->close();
+    }
+}
