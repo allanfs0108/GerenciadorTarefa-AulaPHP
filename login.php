@@ -18,7 +18,7 @@
             <div class="col-md-4">
                 <div class="card card-body mt-5">
                     <h3 class="text-center">login</h3>
-                    <form action="autheticate.php" method="POST">
+                    <form action="authenticate.php" method="POST">
                         <div class="form-group">
                             <input type="email" name="email" id="email" class="form-control"
                                 placeholder="exemplo@email.com" required>

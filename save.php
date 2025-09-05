@@ -1,5 +1,11 @@
 <?php
 
+session_start();
+if(!isset($_SESSION['user_id'])) {
+    header("Location: login.php");
+    exit();
+}
+
 require_once 'conn.php';
 
 try {
@@ -19,6 +25,9 @@ try {
                     header("Location: index.php");
                     exit();
                 } else {
+                    session_start();
+                    $_SESSION['message'] = "Erro ao executar a tarefa.";
+                    $_SESSION['message_typr'] = "danger";
                     throw new Exception("Erro ao executar a consulta: " . $stmt->error);
                 }
 
